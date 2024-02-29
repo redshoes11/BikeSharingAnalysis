@@ -161,14 +161,16 @@ col1, col2 = st.columns(2)
 with col1:
     best_season = season_sharing_df.cnt.max()
     st.write("Best Season")
-    st.write("FALL")
+    s = f"<p style='font-size:30px;'>{'FALL'}</p>"
+    st.markdown(s, unsafe_allow_html=True)
     st.metric("Total ", value=best_season)
 
 
 with col2:
     worst_season = season_sharing_df.cnt.min()
     st.write("Worst Season")
-    st.write("SPRING")
+    s = f"<p style='font-size:30px;'>{'SPRING'}</p>"
+    st.markdown(s, unsafe_allow_html=True)
     st.metric("Total ", value=worst_season)
 
 fig, ax= plt.subplots(nrows=1, ncols=1, figsize=(15, 7))
